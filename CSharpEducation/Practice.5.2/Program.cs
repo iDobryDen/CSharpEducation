@@ -4,7 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Person Egor = new Person();
+        Person Age = new Person();
+
+        Egor.Age = 5;
+
+        Egor.CheckIsAdult();
+
+
+
+        Console.WriteLine(Egor.CheckIsAdult());
     }
 }
 
