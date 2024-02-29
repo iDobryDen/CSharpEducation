@@ -2,9 +2,17 @@
 
 class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Console.WriteLine("Hello, World!");
+
+    Person Name = new Person();
+    Person Age = new Person();
+
+    Name.Name = "Denis";
+    Name.Age = 10;
+
+        Console.WriteLine(Name.Name);
+        Console.Write(Name.Age);
     }
 }
 
