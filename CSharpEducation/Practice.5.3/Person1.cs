@@ -3,22 +3,25 @@
 public class Person
 {
     public string Firstname;
-    public string Lastname;
+    public string Lastname = "Pere";
     public int Age;
-    public string Company;
+    public string Company = "UdGU";
 
     //public Person()
     //{
-        //this.Firstname = "Denis";
-        //this.Lastname = "Pere";
-        //this.Age = 10;
-        //this.Company = "UDGU";
+    //    this.Lastname = "Pere";
+    //    this.Company = "UDGU";
     //}
-    public Person(string Firstname, string Lastname, int Age, string Company)
+    //public Person(string Firstname, string Lastname, int Age, string Company)
+    //{
+    //    this.Firstname = Firstname;
+    //    this.Lastname = Firstname;
+    //    this.Age = Age;
+    //    this.Company = Firstname;
+    //}
+    public Person(string Firstname, int Age)
     {
         this.Firstname = Firstname;
-        this.Lastname = Firstname;
         this.Age = Age;
-        this.Company = Firstname;
     }
 }
