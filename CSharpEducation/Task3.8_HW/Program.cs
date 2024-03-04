@@ -14,7 +14,7 @@ class Program
         int[] nums2 = negative_nums(nums, out int iskl);
 
         Console.WriteLine("\nМассив без отрицательных значений:");
-        PrintArray(nums2); //Почему PrintArray работет только с первым аргументом nums2?
+        PrintArray(nums2);
 
         Console.WriteLine($"\nКоличество удаленных отрицательных чисел: {iskl}");
 
