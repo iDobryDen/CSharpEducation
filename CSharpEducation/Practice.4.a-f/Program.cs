@@ -71,23 +71,26 @@ class Program
 
     public static void DeleteName(ref string[] names, string DelName)
     {
-        int n = names.Length;
-        string[] Names_bezdel = new string[] { };
-        for (int i = 0; i < names.Length; i++)
-        {
-            if (names[i] != DelName)
-            {
-                names[i] = Names_bezdel[i];
-                names = Names_bezdel;
-            }
-            else
-            {
+        int index = Array.IndexOf(names, DelName);
 
+        if (index != -1)
+        {
+            Console.WriteLine($"Индекс студента " + DelName + " в списке: " + index);
+            string[] newarray = new string[names.Length - 1];
+            for (int i = 0; i < index; i++)
+            {
+                newarray[i] = names[i];
             }
-            Names_plus_1[i] = names[i];
+            for (int i = index; i < newarray.Length; i++)
+            {
+                newarray[i] = names[i + 1];
+            }
+            names = newarray;
         }
-        Names_plus_1[Names_plus_1.Length - 1] = newName;
-        names = Names_plus_1;
+        else
+        {
+            Console.WriteLine($"Число " + DelName + " не найдено в cписке.");
+        }
     }
 
     public static void CleanNames(string[] args)
