@@ -16,7 +16,15 @@ namespace Practice._5._5
 		}
         public void TakeMoney(int takemoney)
         {
-            _balance -= takemoney;
+			if (takemoney <= _balance)
+			{
+				_balance -= takemoney;
+			}
+			else
+			{
+                Console.WriteLine("на счету не достаточно средств");
+            }
+
         }
         public void ShowBalance()
         {
