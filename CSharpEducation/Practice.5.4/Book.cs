@@ -1,5 +1,4 @@
-﻿using System;
-namespace Practice._5._4
+﻿namespace Practice._5._4
 {
 	public class Book
 	{

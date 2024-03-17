@@ -8,10 +8,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Book book1 = new Book("skazkaocaresoltane1", "Pushkin", 1782, "Skazki");
-        Book book2 = new Book("skazkaocaresoltane2", "Pushkin", 1782, "Skazki");
-        Book book3 = new Book("skazkaocaresoltane3", "Pushkin", 1782, "Skazki");
+        Book book1 = new Book("skazkaocaresoltane", "Pushkin", 1782, "Skazki");
+        Book book2 = new Book("HarryPotter", "Rouling", 2001, "Skazki");
+        Book book3 = new Book("AnnaKarenina", "Tolstoi", 1840, "Roman");
 
-        Console.WriteLine("Total number of books created: " + Book.BooksCount);
+        Console.WriteLine("Количество книг: " + Book.BooksCount);
     }
 }
