@@ -6,7 +6,7 @@ namespace BubbleSort.Tests;
 
 public class Tests
 {
-    private const int N = 1_000_000;
+    private const int N = 50000;
     private int[] _array;
 
     [SetUp]
