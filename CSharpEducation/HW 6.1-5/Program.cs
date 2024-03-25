@@ -43,11 +43,11 @@ static class Search
         }
     }
 
-    public static void BinarySearch(int[] _array, int _SeekNumber)
+    public static int BinarySearch(int[] _array, int _SeekNumber)
     {
         int left_index = 0;
         int right_index = _array.Length - 1;
-        int middle_index = (left_index + right_index) / 2;
+        //int middle_index = (left_index + right_index) / 2;
 
         int BinaryIteration = 0;
         int SuccessSearch = 0;
@@ -59,24 +59,29 @@ static class Search
 
         while (true)
         {
+            int middle_index = (left_index + right_index) / 2;
             BinaryIteration++;
-            if (_SeekNumber == middle_index)
+            if (_SeekNumber == _array[middle_index])
             {
                 Console.WriteLine($"Число {_SeekNumber} найдено за {BinaryIteration} бинарных циклов");
                 SuccessSearch++;
+                return middle_index;
             }
-            if (_SeekNumber < middle_index)
+            else if (_SeekNumber < _array[middle_index])
             {
                 right_index = middle_index - 1;
             }
-            if (_SeekNumber > middle_index)
+            else if (_SeekNumber > _array[middle_index])
             {
-                left_index = middle_index + 1;
+                left_index = middle_index  + 1;
             }
             //if (SuccessSearch == 0)
             //{
             //    Console.WriteLine($"Число " + _SeekNumber + " не найдено за " + BinaryIteration + " линейных циклов");
             //}
         }
+        return -1;
     }
 }
+
+// почему то находит не за 2 бинарных цикла, а за 3, хотя уже на второй итерации middle_index равен _SeekNumber
