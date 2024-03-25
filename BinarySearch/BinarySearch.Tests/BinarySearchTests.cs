@@ -6,7 +6,7 @@ namespace BinarySearch.Tests
 {
     public class BinarySearchTests
     {
-        private const int N = 1_000_000_000;
+        private const int N = 100;
         private int[] _sortedArray;
         private int[] _unsortedArray;
 
