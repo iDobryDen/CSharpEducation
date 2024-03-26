@@ -14,7 +14,8 @@ namespace HW_6._1_5;
 //    }
 //}
 
-static class Search
+//static class Search
+static class Program
 {
     public static void Main()
     {
