@@ -26,6 +26,10 @@ public static class BubbleSort
                     isSorted = false;
                 }
             }
+            if (isSorted == true)
+            {
+                return;
+            }
         }
     }
 }
