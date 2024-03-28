@@ -22,6 +22,24 @@ class Program
             new Student( "Igor", "ThreeFamily", 18, "IzhGTU"),
         };
 
+        Student oldStudent = Students[0];
+        Student youngStudent = Students[0];
+
+        foreach (Student Stud in Students)
+        {
+            if (Stud.Age > oldStudent.Age)
+            {
+                oldStudent = Stud;
+            }
+            if (Stud.Age < youngStudent.Age)
+            {
+                youngStudent = Stud;
+            }
+        }
+
+        Console.WriteLine($"Самый взрослый студент: {oldStudent.FirstName} {oldStudent.SecondName}");
+        Console.WriteLine($"Самый младший студент: {youngStudent.FirstName} {youngStudent.SecondName}");
+
         foreach (Student Stud in Students)
         {
             if (Stud.Age > 21)
