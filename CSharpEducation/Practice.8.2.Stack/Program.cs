@@ -26,19 +26,63 @@ class Program
         students.Push(new Student("Den2", 33));
         students.Push(new Student("Egor2", 28));
         students.Push(new Student("Igor2", 23));
+
+        //string Name1 = students.Name;
+        //int Age1 = students.Age;
+
+        Console.WriteLine("Введите имя студента, которого хотите найти:");
+        string SearchName = Console.ReadLine();
+        Console.WriteLine("Введите возраст студента, которого хотите найти:");
+        int SearchAge = int.Parse(Console.ReadLine());
+
+        Search(SearchName, SearchAge, students);
+        foreach (var stud in students)
+        {
+            Console.WriteLine($"{stud.Name} {stud.Age}");
+        }
     }
+    public static void Search(string _searchname, int _searchage, Stack<Student> students)
+    {
+        Stack<Student> students2 = new Stack<Student>();
+        while (students.Count > 0)
+        {
+            var currentStudent = students.Pop();
+            if (_searchname == currentStudent.Name && _searchage == currentStudent.Age)
+            {
+                Console.WriteLine($"Студент {currentStudent.Name} возрастом {currentStudent.Age} найден.");
+                while (students2.Count > 0)
+                {
+                    students.Push(students2.Pop());
+                }
+                return;
+            }
+            else
+            {
+                students2.Push(currentStudent);
+            }
+        }
+        while (students2.Count > 0)
+        {
+            students.Push(students2.Pop());
+        }
+        Console.WriteLine("Студент не найден.");
+        return;
+    }
+
 }
 public class Student
 {
     public string Name { get; }
-    public int Age { get; }
+    public int Age; { get; }
   
 
     public Student(string _name, int _age)
     {
         Name = _name;
-        Age = _age;
+        this.Age = _age;
         
     }
 }
 
+//в задаче было условие вернуть объект типа student, если студент не найден, то вернуть null.
+//Не понял, я везде возвращаю просто return
