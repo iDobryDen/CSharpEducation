@@ -73,7 +73,7 @@ class Program
 public class Student
 {
     public string Name { get; }
-    public int Age; { get; }
+    public int Age { get; }
   
 
     public Student(string _name, int _age)
