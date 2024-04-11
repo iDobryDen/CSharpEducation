@@ -16,57 +16,61 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("1. Добавить студента");
-        Console.WriteLine("2. Показать всех студентов");
-        Console.WriteLine("3. Удалить студента");
-        Console.WriteLine("4. Очистить список");
-        Console.WriteLine("5. Проверить имя в списке");
-        Console.WriteLine("6. Выход");
-
         string[] Names = new string[] { "Anna", "Denis", "Artem", "Sonya", "Egor" };
 
-        Console.WriteLine("Выберете команду: ");
-        int a = int.Parse(Console.ReadLine());
-        if (a == 1)
+        bool isRun = true;
+        while (isRun == true)
         {
-            Console.WriteLine("Введите имя нового студента: ");
-            string newname = Console.ReadLine();
-            AddName(ref Names, newname);
-            PrintNames(Names);
-        }
-        else if (a == 2)
-        {
-            PrintNames(Names);
-        }
-        else if (a == 3)
-        {
-            Console.WriteLine("Введите имя студента, которого хотите удалить: ");
-            string DelName = Console.ReadLine();
-            DeleteName(ref Names, DelName);
-            PrintNames(Names);
-        }
-        else if (a == 4)
-        {
-            CleanNames(Names);
-            Console.WriteLine("список после очистки такой: ");
-            PrintNames(Names);
-        }
-        else if (a == 5)
-        {
-            Console.WriteLine("Введите имя которое хотите проверить в списке: ");
-            string check_name = Console.ReadLine();
-            CheckName(Names, check_name);
-        }
-        else if (a == 6)
-        {
-            Console.WriteLine("Выход из программы");
-            return;
-        }
-        else
-        {
-            Console.WriteLine($"Введенная команда: " + a + " недоступна");
-        }
+            Console.WriteLine("---------------------------");
+            Console.WriteLine("1. Добавить студента");
+            Console.WriteLine("2. Показать всех студентов");
+            Console.WriteLine("3. Удалить студента");
+            Console.WriteLine("4. Очистить список");
+            Console.WriteLine("5. Проверить имя в списке");
+            Console.WriteLine("6. Выход");
+            Console.WriteLine("---------------------------");
 
+            Console.WriteLine("Выберете команду: ");
+            int a = int.Parse(Console.ReadLine());
+            if (a == 1)
+            {
+                Console.WriteLine("Введите имя нового студента: ");
+                string newname = Console.ReadLine();
+                AddName(ref Names, newname);
+                PrintNames(Names);
+            }
+            else if (a == 2)
+            {
+                PrintNames(Names);
+            }
+            else if (a == 3)
+            {
+                Console.WriteLine("Введите имя студента, которого хотите удалить: ");
+                string DelName = Console.ReadLine();
+                DeleteName(ref Names, DelName);
+                PrintNames(Names);
+            }
+            else if (a == 4)
+            {
+                CleanNames(Names);
+                Console.WriteLine("список после очистки такой: ");
+                PrintNames(Names);
+            }
+            else if (a == 5)
+            {
+                Console.WriteLine("Введите имя которое хотите проверить в списке: ");
+                string check_name = Console.ReadLine();
+                CheckName(Names, check_name);
+            }
+            else if (a == 6)
+            {
+                break;
+            }
+            else
+            {
+                Console.WriteLine($"Введенная команда: " + a + " недоступна");
+            }
+        }
     }
 
     public static void DeleteName(ref string[] names, string DelName)
