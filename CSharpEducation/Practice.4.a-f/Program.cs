@@ -68,7 +68,7 @@ class Program
             }
             else
             {
-                Console.WriteLine($"Введенная команда: " + a + " недоступна");
+                Console.WriteLine($"Введенная команда: {a} недоступна");
             }
         }
     }
@@ -79,7 +79,7 @@ class Program
 
         if (index != -1)
         {
-            Console.WriteLine($"Индекс студента " + DelName + " в списке: " + index);
+            Console.WriteLine($"Индекс студента {DelName} в списке: {index}");
             string[] newarray = new string[names.Length - 1];
             for (int i = 0; i < index; i++)
             {
@@ -93,7 +93,7 @@ class Program
         }
         else
         {
-            Console.WriteLine($"Число " + DelName + " не найдено в cписке.");
+            Console.WriteLine($"Число {DelName} не найдено в cписке.");
         }
     }
 
@@ -142,12 +142,12 @@ class Program
             {
                 a = 1;
                 b = b + a;
-                Console.WriteLine($"Имя " + check_name + " в списке студентов");
+                Console.WriteLine($"Имя {check_name} в списке студентов");
             }
         }
         if (b == 0)
         {
-            Console.WriteLine($"Имя " + check_name + " нет в списке студентов");
+            Console.WriteLine($"Имя {check_name} нет в списке студентов");
         }
     }
 }
